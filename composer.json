@@ -1,6 +1,6 @@
 {
-    "name": "stayallive/raven",
-    "description": "Raven client for Sentry that supports background processing through multiple providers.",
+    "name": "codeyellow/raven",
+    "description": "Laravel 5 Raven client for Sentry that supports background processing through multiple providers.",
     "homepage": "https://github.com/rcrowe/Raven",
     "keywords": ["sentry", "raven", "laravel", "async", "background", "worker"],
     "authors": [
@@ -12,7 +12,7 @@
     "type": "library",
     "require": {
         "raven/raven": "~0.9.0",
-        "guzzlehttp/guzzle": "~4.1.0"
+        "guzzlehttp/guzzle": "5.0.3"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.1.0",

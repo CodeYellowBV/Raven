@@ -106,7 +106,7 @@ class Client extends Raven_Client
     public function send($data)
     {
         if (!$this->servers) {
-            throw new RuntimeException('No Raven DSN set. Unable to log to Sentry.');
+            return;
         }
 
         // Encode & compress data
@@ -126,7 +126,11 @@ class Client extends Raven_Client
         ];
 
         foreach ($this->servers as $url) {
-            $this->handler->process($url, $message, $headers);
+            try {
+                $this->handler->process($url, $message, $headers);
+            } catch (\Exception $e) {
+                return;
+            }
         }
 
         return true;
